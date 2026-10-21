@@ -22,4 +22,15 @@
 
 }
 
-.main
+.main-title {
+    color: #052C65;
+    font-family: Roboto-Medium, sans-serif;
+}
+
+.span-text {
+    font-family: Roboto-Medium,sans-serif;
+}
+
+.date-text {
+    color: #6C757D;
+}
