@@ -34,3 +34,12 @@
 .date-text {
     color: #6C757D;
 }
+
+button {
+    cursor: pointer;
+}
+
+.active-button {
+    background: #6C757D;
+    color: #ffffff;
+}
