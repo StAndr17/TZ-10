@@ -10,8 +10,12 @@
     color: #052C65;
 }
 
-ul li a:hover {
+ul li a:hover span {
     color: #ffffff;
+}
+
+ul li a:hover svg path {
+    fill: #ffffff;
 }
 
 .price-text {
