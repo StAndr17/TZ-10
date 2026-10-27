@@ -51,3 +51,8 @@ button {
     background: #6C757D;
     color: #ffffff;
 }
+
+.dropdown-menu .dropdown-item:hover {
+    background: #0D6EFD;
+    color: #ffffff;
+}
