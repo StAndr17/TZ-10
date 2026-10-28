@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/dohodi.css">
-    <link rel="stylesheet" href="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.min.css">
 </head>
 <body>
 <div class="d-flex gap-5">
@@ -42,17 +42,18 @@
                         <span class="aside-text">Доходы и расходы</span>
                     </a>
                 </li>
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle bg-primary text-white w-100" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                        Категории
+                    </button>
+                    <ul class="dropdown-menu w-100">
+                        <li><a class="dropdown-item" href="#">Доходы</a></li>
+                        <li><a class="dropdown-item" href="#">Расходы</a></li>
+                    </ul>
+                </div>
             </ul>
-            <div class="dropdown">
-                <button class="btn dropdown-toggle bg-primary text-white" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                    Категории
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Доходы</a></li>
-                    <li><a class="dropdown-item" href="#">Расходы</a></li>
-                </ul>
-            </div>
+
         </div>
         <div class="d-flex flex-column justify-content-between">
             <div>
@@ -74,49 +75,48 @@
     </aside>
     <div class="main pb-5 pt-5">
         <div class="main-title fs-10"><h1>Доходы</h1></div>
-        <div class="d-flex flex-row gap-3 pb-3">
-            <div class="border rounded dohodi-option-text pt-3 pl-4 pb-5 pr-4">
+        <div class="d-flex flex-row flex-wrap gap-3 pb-3">
+            <div class="border rounded dohodi-option-text pt-3 ps-4 pb-5 pe-4 flex-fill">
                 <h2>Депозиты</h2>
-                <div class="flex">
+                <div>
                     <button class="btn bg-primary text-white">Редактировать</button>
-                    <button class="btn delete-button text-white">Удалить</button>
+                    <button class="btn delete-button text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">Удалить</button>
                 </div>
             </div>
-            <div class="border rounded dohodi-option-text pt-3 pl-4 pb-5 pr-4">
+            <div class="border rounded dohodi-option-text pt-3 ps-4 pb-5 pe-4 flex-fill">
                 <h2>Зарплата</h2>
-                <div class="flex">
+                <div>
                     <button class="btn bg-primary text-white">Редактировать</button>
-                    <button class="btn delete-button text-white">Удалить</button>
+                    <button class="btn delete-button text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">Удалить</button>
                 </div>
             </div>
-            <div class="border rounded dohodi-option-text pt-3 pl-4 pb-5 pr-4">
+            <div class="border rounded dohodi-option-text pt-3 ps-4 pb-5 pe-4 flex-fill">
                 <h2>Сбережения</h2>
-                <div class="flex">
+                <div>
                     <button class="btn bg-primary text-white">Редактировать</button>
-                    <button class="btn delete-button text-white">Удалить</button>
+                    <button class="btn delete-button text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">Удалить</button>
                 </div>
             </div>
-            <div class="border rounded dohodi-option-text pt-3 pl-4 pb-5 pr-4">
+            <div class="border rounded dohodi-option-text pt-3 ps-4 pb-5 pe-4 flex-fill">
                 <h2>Инвестиции</h2>
-                <div class="flex">
+                <div>
                     <button class="btn bg-primary text-white">Редактировать</button>
-                    <button class="btn delete-button text-white" id="delete">Удалить</button>
+                    <button class="btn delete-button text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">Удалить</button>
                 </div>
             </div>
-            <div class="border rounded dohodi-option-text pt-3 pl-4 pb-5 pr-4">
+            <div class="border rounded dohodi-option-text pt-5 ps-5 pb-5 pe-5 w-100">
                 <div class="additional d-flex justify-content-center align-items-center">+</div>
             </div>
         </div>
-        <div class="modal" id="modal" tabindex="-1">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
-                <div>
+                <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Вы действительно хотите удалить категорию? Связанные доходы останутся
-                            без категории.</h5>
+                        <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">Вы действительно хотите удалить категорию? Связанные доходы останутся</h1>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Да, удалять</button>
-                        <button type="button" class="btn btn-primary">Не удалять</button>
+                    <div class="modal-footer d-flex justify-content-center gap-2">
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Да, удалять</button>
+                        <button type="button" class="btn btn-danger">Не удалять</button>
                     </div>
                 </div>
             </div>
@@ -124,13 +124,5 @@
     </div>
 </div>
 <script src="./bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    const modal = document.getElementById('modal');
-    const deleteInput = document.getElementById('delete');
-
-    deleteInput.addEventListener('click', () => {
-        modal.show();
-    })
-</script>
 </body>
 </html>

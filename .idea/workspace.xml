@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8c5c063-ad38-4d2b-9772-c765ea04058f" name="Changes" comment="body">
-      <change afterPath="$PROJECT_DIR$/css/dohodi.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dohodi.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/category-dohodi.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/category-rashodi.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-dohodi-rashodi.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/category-dohodi.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/dohodi-and-rashodi.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dohodi-and-rashodi.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/edit-category-dohodi.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/edit-category-rashodi.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/edit-dohodi-rashodi.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rashodi.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dohodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/dohodi.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/main.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,29 +43,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JavaScript Debug.main.html.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Стеценко А.В. Работа/projects/untitled55&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.main.html.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "D:/Стеценко А.В. Работа/projects/untitled55",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Стеценко А.В. Работа\projects\untitled55" />
+      <recent name="D:\Стеценко А.В. Работа\projects\untitled55\css" />
       <recent name="D:\Стеценко А.В. Работа\projects\untitled55\fonts" />
       <recent name="D:\Стеценко А.В. Работа\projects\untitled55\images" />
     </key>
@@ -100,6 +110,7 @@
       <workItem from="1792829144484" duration="3210000" />
       <workItem from="1793043757143" duration="415000" />
       <workItem from="1793086139360" duration="2637000" />
+      <workItem from="1793175948536" duration="5492000" />
     </task>
     <servers />
   </component>
