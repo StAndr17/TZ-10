@@ -112,7 +112,7 @@
                     <td class="text-center">зарплата</td>
                     <td class="text-center">500$</td>
                     <td class="text-center">11.09.2022</td>
-                    <td class="text-end"><svg width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <td class="text-end delete-operation"><svg data-bs-toggle="modal" data-bs-target="#exampleModal" width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4 5.5C4.27614 5.5 4.5 5.72386 4.5 6V12C4.5 12.2761 4.27614 12.5 4 12.5C3.72386 12.5 3.5 12.2761 3.5 12V6C3.5 5.72386 3.72386 5.5 4 5.5Z" fill="black"/>
                         <path d="M6.5 5.5C6.77614 5.5 7 5.72386 7 6V12C7 12.2761 6.77614 12.5 6.5 12.5C6.22386 12.5 6 12.2761 6 12V6C6 5.72386 6.22386 5.5 6.5 5.5Z" fill="black"/>
                         <path d="M9.5 6C9.5 5.72386 9.27614 5.5 9 5.5C8.72386 5.5 8.5 5.72386 8.5 6V12C8.5 12.2761 8.72386 12.5 9 12.5C9.27614 12.5 9.5 12.2761 9.5 12V6Z" fill="black"/>
@@ -129,7 +129,7 @@
                     <td class="text-center">жилье</td>
                     <td class="text-center">2 500$</td>
                     <td class="text-center">12.09.2022</td>
-                    <td class="text-end"><svg width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <td class="text-end delete-operation"><svg data-bs-toggle="modal" data-bs-target="#exampleModal" width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4 5.5C4.27614 5.5 4.5 5.72386 4.5 6V12C4.5 12.2761 4.27614 12.5 4 12.5C3.72386 12.5 3.5 12.2761 3.5 12V6C3.5 5.72386 3.72386 5.5 4 5.5Z" fill="black"/>
                         <path d="M6.5 5.5C6.77614 5.5 7 5.72386 7 6V12C7 12.2761 6.77614 12.5 6.5 12.5C6.22386 12.5 6 12.2761 6 12V6C6 5.72386 6.22386 5.5 6.5 5.5Z" fill="black"/>
                         <path d="M9.5 6C9.5 5.72386 9.27614 5.5 9 5.5C8.72386 5.5 8.5 5.72386 8.5 6V12C8.5 12.2761 8.72386 12.5 9 12.5C9.27614 12.5 9.5 12.2761 9.5 12V6Z" fill="black"/>
@@ -143,6 +143,19 @@
                 </tbody>
             </table>
         </form>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">Вы действительно хотите удалить операцию?</h1>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center gap-2">
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Да, удалить</button>
+                        <button type="button" class="btn btn-danger">Не удалять</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <script src="./bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
