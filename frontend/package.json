@@ -1,0 +1,25 @@
+{
+  "name": "untitled55",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StAndr17/TZ-10.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/StAndr17/TZ-10/issues"
+  },
+  "homepage": "https://github.com/StAndr17/TZ-10#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

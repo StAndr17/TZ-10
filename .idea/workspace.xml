@@ -5,18 +5,60 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8c5c063-ad38-4d2b-9772-c765ea04058f" name="Changes" comment="body">
-      <change afterPath="$PROJECT_DIR$/fonts/Roboto-Bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category-dohodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/category-dohodi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category-rashodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/category-rashodi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create-dohodi-rashodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/create-dohodi-rashodi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/dohodi-and-rashodi.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/dohodi-and-rashodi.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/dohodi.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/dohodi.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dohodi-and-rashodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/dohodi-and-rashodi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dohodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/dohodi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edit-category-dohodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/edit-category-dohodi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edit-category-rashodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/edit-category-rashodi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edit-dohodi-rashodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/edit-dohodi-rashodi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rashodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/rashodi.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/config/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/controllers/auth.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/controllers/test.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/data/test-results.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/data/tests.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/data/users.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/models/test-result.model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/models/test.model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/models/user.model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/routes/auth.routes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/routes/test.routes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/utils/middleware.utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/utils/token.utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/utils/validation.utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/category-dohodi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/category-rashodi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/create-dohodi-rashodi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/dohodi-and-rashodi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/dohodi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/edit-category-dohodi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/edit-category-rashodi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/edit-dohodi-rashodi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/rashodi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category-dohodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/category-dohodi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category-rashodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/category-rashodi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create-dohodi-rashodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/create-dohodi-rashodi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/category-dohodi.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/css/category-dohodi.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/dohodi-and-rashodi.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/css/dohodi-and-rashodi.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/dohodi.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/css/dohodi.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dohodi-and-rashodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/dohodi-and-rashodi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dohodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/dohodi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edit-category-dohodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/edit-category-dohodi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edit-category-rashodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/edit-category-rashodi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edit-dohodi-rashodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/edit-dohodi-rashodi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/Roboto-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/fonts/Roboto-Bold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/Roboto-Medium.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/fonts/Roboto-Medium.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/Roboto-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/fonts/Roboto-Regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/images/Logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rashodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/rashodi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/signup.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +70,7 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -42,32 +85,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JavaScript Debug.main.html.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Стеценко А.В. Работа/projects/untitled55/fonts&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.main.html.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "step2",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "D:/Стеценко А.В. Работа/projects/untitled55/frontend/src/components",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2025.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Стеценко А.В. Работа\projects\untitled55\fonts" />
+      <recent name="D:\Стеценко А.В. Работа\projects\untitled55\frontend\src\components" />
+      <recent name="D:\Стеценко А.В. Работа\projects\untitled55\frontend\src" />
+      <recent name="D:\Стеценко А.В. Работа\projects\untitled55\frontend" />
       <recent name="D:\Стеценко А.В. Работа\projects\untitled55" />
-      <recent name="D:\Стеценко А.В. Работа\projects\untitled55\css" />
-      <recent name="D:\Стеценко А.В. Работа\projects\untitled55\images" />
+      <recent name="D:\Стеценко А.В. Работа\projects\untitled55\fonts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Стеценко А.В. Работа\projects\untitled55\frontend" />
+      <recent name="D:\Стеценко А.В. Работа\projects\untitled55" />
+      <recent name="D:\Стеценко А.В. Работа\projects\untitled55\frontend\src" />
+      <recent name="D:\Стеценко А.В. Работа\projects\untitled55\frontend\templates" />
+      <recent name="D:\Стеценко А.В. Работа\projects\untitled55\frontend\src\components" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -112,6 +165,11 @@
       <workItem from="1793175948536" duration="5492000" />
       <workItem from="1793204721924" duration="3624000" />
       <workItem from="1793287064524" duration="2089000" />
+      <workItem from="1793392202732" duration="174000" />
+      <workItem from="1793517901600" duration="1689000" />
+      <workItem from="1793722326004" duration="806000" />
+      <workItem from="1793731590311" duration="1750000" />
+      <workItem from="1793863674997" duration="1058000" />
     </task>
     <servers />
   </component>
