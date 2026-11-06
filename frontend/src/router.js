@@ -24,7 +24,7 @@ export class Router {
             {
                 route: '#/',
                 title: 'Главная',
-                template: '/main.html',
+                template: './templates/main.html',
                 styles: '/css/main.css',
                 load: () => {
 
@@ -33,7 +33,7 @@ export class Router {
             {
                 route: '#/signup',
                 title: 'Регистрация',
-                template: 'signup.html',
+                template: './templates/signup.html',
                 styles: '/styles/login.css',
                 load: () => {
                     new Signup('signup');
@@ -42,7 +42,7 @@ export class Router {
             {
                 route: '#/login',
                 title: 'Вход в систему',
-                template: 'login.html',
+                template: './templates/login.html',
                 styles: '/styles/login.css',
                 load: () => {
                     new Login('login');
@@ -51,7 +51,7 @@ export class Router {
             {
                 route: '#/dohodi',
                 title: 'Доходы',
-                template: '/dohodi.html',
+                template: './templates/dohodi.html',
                 styles: '/cs/dohodi.css',
                 load: () => {
                     new Dohodi();
@@ -60,7 +60,7 @@ export class Router {
             {
                 route: '#/rashodi',
                 title: 'Расходы',
-                template: '/rashodi.html',
+                template: './template/rashodi.html',
                 styles: '/css/dohodi.css',
                 load: () => {
                     new Rashodi();
@@ -69,7 +69,7 @@ export class Router {
             {
                 route: '#/categoryDohodi',
                 title: 'Категории доходов',
-                template: '/category-dohodi.html',
+                template: './templates/category-dohodi.html',
                 styles: '/css/category-dohodi.css',
                 load: () => {
                     new categoryDohodi();
@@ -78,7 +78,7 @@ export class Router {
             {
                 route: '#/categoryRashodi',
                 title: 'Категории расходов',
-                template: '/category-rashodi.html',
+                template: 'templates/category-rashodi.html',
                 styles: '/css/category-dohodi.css',
                 load: () => {
                     new categoryRashodi();
@@ -87,7 +87,7 @@ export class Router {
             {
                 route: '#/editCategoryDohodi',
                 title: 'Редактировать категорию доходов',
-                template: '/edit-category-dohodi.html',
+                template: './templates/edit-category-dohodi.html',
                 styles: '/css/edit-category-dohodi.css',
                 load: () => {
                     new editCategoryDohodi();
@@ -96,7 +96,7 @@ export class Router {
             {
                 route: '#/editCategoryRashodi',
                 title: 'Редактировать категорию расходов',
-                template: '/edit-category-rashodi.html',
+                template: './templates/edit-category-rashodi.html',
                 styles: '/css/category-dohodi.css',
                 load: () => {
                     new editCategoryRashodi();
@@ -105,7 +105,7 @@ export class Router {
             {
                 route: '#/editDohodiRashodi',
                 title: 'Редактировать категорию доходов/расходов',
-                template: '/edit-dohodi-rashodi.html',
+                template: './templates/edit-dohodi-rashodi.html',
                 styles: '/css/category-dohodi.css',
                 load: () => {
                     new editDohodiRashodi();
@@ -114,7 +114,7 @@ export class Router {
             {
                 route: '#/DohodiAndRashodi',
                 title: 'Доходы и расходы',
-                template: '/dohodi-and-rashodi.html',
+                template: './templates/dohodi-and-rashodi.html',
                 styles: '/css/dohodi-and-rashodi.css',
                 load: () => {
                     new DohodiAndRashodi();
@@ -123,7 +123,7 @@ export class Router {
             {
                 route: '#/CreateDohodiAndRashodi',
                 title: 'Создание доходов и расходов',
-                template: '/create-dohodi-rashodi.html',
+                template: './templates/create-dohodi-rashodi.html',
                 styles: '/css/category-dohodi.css',
                 load: () => {
                     new CreateDohodiRashodi();
@@ -133,36 +133,36 @@ export class Router {
     }
 
     async openRoute() {
-        const urlRoute = window.location.hash.split('?')[0];
-        if (urlRoute === '#/login') {
-            await Signup.logout();
-            window.location.href = '#/';
-            return;
-        }
-
-        const newRoute = this.routes.find(item => {
-            return item.route === urlRoute;
-        });
-
-        if (!newRoute) {
-            window.location.href = '#/';
-            return;
-        }
-
-        this.contentElement.innerHTML =
-            await fetch(newRoute.template).then(response => response.text());
-        this.stylesElement.setAttribute('href', newRoute.styles);
-        this.titleElement.innerText = newRoute.title;
-
-        const userInfo = Signup.getUserInfo();
-        const accessToken = localStorage.getItem(Signup.accessTokenKey);
-        if (userInfo && accessToken) {
-            this.profileElement.style.display = 'flex';
-            this.profileFullNameElement.innerText = userInfo.fullName;
-        } else {
-            this.profileElement.style.display = 'none';
-        }
-
-        newRoute.load()
+        // const urlRoute = window.location.hash.split('?')[0];
+        // if (urlRoute === '#/login') {
+        //     await Signup.logout();
+        //     window.location.href = '#/';
+        //     return;
+        // }
+        //
+        // const newRoute = this.routes.find(item => {
+        //     return item.route === urlRoute;
+        // });
+        //
+        // if (!newRoute) {
+        //     window.location.href = '#/';
+        //     return;
+        // }
+        //
+        // this.contentElement.innerHTML =
+        //     await fetch(newRoute.template).then(response => response.text());
+        // this.stylesElement.setAttribute('href', newRoute.styles);
+        // this.titleElement.innerText = newRoute.title;
+        //
+        // const userInfo = Signup.getUserInfo();
+        // const accessToken = localStorage.getItem(Signup.accessTokenKey);
+        // if (userInfo && accessToken) {
+        //     this.profileElement.style.display = 'flex';
+        //     this.profileFullNameElement.innerText = userInfo.fullName;
+        // } else {
+        //     this.profileElement.style.display = 'none';
+        // }
+        //
+        // newRoute.load()
     }
 }

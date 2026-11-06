@@ -24,7 +24,7 @@ module.exports = {
                 {from: "templates", to: "templates"},
                 {from: "static/fonts", to: "fonts"},
                 {from: "static/images", to: "images"},
-                {from: "static/main.min.css", to: "./"},
+                // {from: "static/main.min.css", to: "./"},
                 {from: "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"}
             ],
         }),

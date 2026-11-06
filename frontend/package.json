@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server",
-    "build": "webpack"
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "dev": "webpack serve --open"
   },
   "repository": {
     "type": "git",
@@ -14,12 +16,19 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/StAndr17/TZ-10/issues"
   },
   "homepage": "https://github.com/StAndr17/TZ-10#readme",
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "webpack": "^5.112.2",
+    "webpack-cli": "^7.3.1",
+    "webpack-dev-server": "^6.1.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "copy-webpack-plugin": "^14.0.0",
+    "html-webpack-plugin": "^5.6.8"
   }
 }
