@@ -1,0 +1,56 @@
+.border-right {
+    color: #D9D9D9;
+}
+
+.aside-svg {
+    color: #052C65;
+}
+
+.aside-text {
+    color: #052C65;
+    font-family: Roboto-Regular, sans-serif;
+    font-size: 14px;
+}
+
+ul li a:hover span {
+    color: #ffffff;
+}
+
+ul li a:hover svg path {
+    fill: #ffffff;
+}
+
+.price-text {
+    color: #0D6EFD;
+}
+
+.svg-user {
+    color: #6C757D;
+}
+
+.main-title {
+    color: #052C65;
+    font-family: Roboto-Medium, sans-serif;
+}
+
+.span-text {
+    font-family: Roboto-Medium,sans-serif;
+}
+
+.date-text {
+    color: #6C757D;
+}
+
+button {
+    cursor: pointer;
+}
+
+.active-button {
+    background: #6C757D;
+    color: #ffffff;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background: #0D6EFD;
+    color: #ffffff;
+}

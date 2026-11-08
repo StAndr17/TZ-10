@@ -112,7 +112,7 @@ export class Router {
                 }
             },
             {
-                route: '#/DohodiAndRashodi',
+                route: '#/dohodiAndRashodi',
                 title: 'Доходы и расходы',
                 template: './templates/dohodi-and-rashodi.html',
                 styles: '/css/dohodi-and-rashodi.css',
@@ -121,7 +121,7 @@ export class Router {
                 }
             },
             {
-                route: '#/CreateDohodiAndRashodi',
+                route: '#/createDohodiAndRashodi',
                 title: 'Создание доходов и расходов',
                 template: './templates/create-dohodi-rashodi.html',
                 styles: '/css/category-dohodi.css',
@@ -133,27 +133,27 @@ export class Router {
     }
 
     async openRoute() {
-        // const urlRoute = window.location.hash.split('?')[0];
-        // if (urlRoute === '#/login') {
-        //     await Signup.logout();
-        //     window.location.href = '#/';
-        //     return;
-        // }
-        //
-        // const newRoute = this.routes.find(item => {
-        //     return item.route === urlRoute;
-        // });
-        //
-        // if (!newRoute) {
-        //     window.location.href = '#/';
-        //     return;
-        // }
-        //
-        // this.contentElement.innerHTML =
-        //     await fetch(newRoute.template).then(response => response.text());
-        // this.stylesElement.setAttribute('href', newRoute.styles);
-        // this.titleElement.innerText = newRoute.title;
-        //
+        const urlRoute = window.location.hash.split('?')[0];
+        if (urlRoute === '#/login') {
+            await Signup.logout();
+            window.location.href = '#/';
+            return;
+        }
+
+        const newRoute = this.routes.find(item => {
+            return item.route === urlRoute;
+        });
+
+        if (!newRoute) {
+            window.location.href = '#/';
+            return;
+        }
+
+        this.contentElement.innerHTML =
+            await fetch(newRoute.template).then(response => response.text());
+        this.stylesElement.setAttribute('href', newRoute.styles);
+        this.titleElement.innerText = newRoute.title;
+
         // const userInfo = Signup.getUserInfo();
         // const accessToken = localStorage.getItem(Signup.accessTokenKey);
         // if (userInfo && accessToken) {
@@ -162,7 +162,7 @@ export class Router {
         // } else {
         //     this.profileElement.style.display = 'none';
         // }
-        //
-        // newRoute.load()
+
+        newRoute.load()
     }
 }

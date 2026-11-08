@@ -22,9 +22,11 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 {from: "templates", to: "templates"},
+                {from: "css", to: "css"},
                 {from: "static/fonts", to: "fonts"},
                 {from: "static/images", to: "images"},
                 // {from: "static/main.min.css", to: "./"},
+                {from: "node_modules/bootstrap/dist/css/bootstrap.min.css"},
                 {from: "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"}
             ],
         }),
