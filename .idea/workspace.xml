@@ -5,24 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8c5c063-ad38-4d2b-9772-c765ea04058f" name="Changes" comment="body">
-      <change beforePath="$PROJECT_DIR$/frontend/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/signup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/templates/category-dohodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/category-dohodi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/templates/category-rashodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/category-rashodi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/templates/create-dohodi-rashodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/create-dohodi-rashodi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/templates/dohodi-and-rashodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/dohodi-and-rashodi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/templates/dohodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/dohodi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/templates/edit-category-dohodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/edit-category-dohodi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/templates/edit-category-rashodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/edit-category-rashodi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/templates/edit-dohodi-rashodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/edit-dohodi-rashodi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/templates/rashodi.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/rashodi.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +125,8 @@
       <workItem from="1793978083442" duration="621000" />
       <workItem from="1794040646587" duration="4285000" />
       <workItem from="1794125011208" duration="2835000" />
+      <workItem from="1794252656314" duration="1437000" />
+      <workItem from="1794319472970" duration="1316000" />
     </task>
     <servers />
   </component>

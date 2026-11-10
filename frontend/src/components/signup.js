@@ -21,7 +21,7 @@ export class Signup {
             },
 
             {
-                name: 'lasName',
+                name: 'lastName',
                 id: 'lasName',
                 element: null,
                 valid: false,
@@ -38,6 +38,13 @@ export class Signup {
             {
                 name: 'password',
                 id: 'password',
+                element: null,
+                regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
+                valid: false,
+            },
+            {
+                name: 'repeat-password',
+                id: 'repeat-password',
                 element: null,
                 regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
                 valid: false,

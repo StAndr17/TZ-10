@@ -60,7 +60,7 @@ export class Router {
             {
                 route: '#/rashodi',
                 title: 'Расходы',
-                template: './template/rashodi.html',
+                template: './templates/rashodi.html',
                 styles: '/css/dohodi.css',
                 load: () => {
                     new Rashodi();
@@ -88,7 +88,7 @@ export class Router {
                 route: '#/editCategoryDohodi',
                 title: 'Редактировать категорию доходов',
                 template: './templates/edit-category-dohodi.html',
-                styles: '/css/edit-category-dohodi.css',
+                styles: '/css/category-dohodi.css',
                 load: () => {
                     new editCategoryDohodi();
                 }
