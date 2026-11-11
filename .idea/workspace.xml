@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8c5c063-ad38-4d2b-9772-c765ea04058f" name="Changes" comment="body">
-      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/signup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/signup.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,6 +128,7 @@
       <workItem from="1794125011208" duration="2835000" />
       <workItem from="1794252656314" duration="1437000" />
       <workItem from="1794319472970" duration="1316000" />
+      <workItem from="1794406900615" duration="2468000" />
     </task>
     <servers />
   </component>

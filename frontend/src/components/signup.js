@@ -22,7 +22,7 @@ export class Signup {
 
             {
                 name: 'lastName',
-                id: 'lasName',
+                id: 'lastName',
                 element: null,
                 valid: false,
             },
@@ -51,22 +51,22 @@ export class Signup {
             },
         ];
 
-        if (this.page === 'signup') {
-            this.fields.unshift({
-                    name: 'name',
-                    id: 'name',
-                    element: null,
-                    regex: /^[А-Я][а-я]+\s*$/,
-                    valid: false,
-                },
-                {
-                    name: 'lastName',
-                    id: 'last-name',
-                    element: null,
-                    regex: /^[А-Я][а-я]+\s*$/,
-                    valid: false,
-                });
-        }
+        // if (this.page === 'signup') {
+        //     this.fields.unshift({
+        //             name: 'name',
+        //             id: 'name',
+        //             element: null,
+        //             regex: /^[А-Я][а-я]+\s*$/,
+        //             valid: false,
+        //         },
+        //         {
+        //             name: 'lastName',
+        //             id: 'lastName',
+        //             element: null,
+        //             regex: /^[А-Я][а-я]+\s*$/,
+        //             valid: false,
+        //         });
+        // }
 
         const that = this;
         this.fields.forEach(item => {
@@ -81,12 +81,12 @@ export class Signup {
             that.processForm();
         }
 
-        if (this.page === 'signup') {
-            this.agreeElement = document.getElementById('agree');
-            this.agreeElement.onchange = function () {
-                that.validateForm();
-            }
-        }
+        // if (this.page === 'signup') {
+        //     this.agreeElement = document.getElementById('agree');
+        //     this.agreeElement.onchange = function () {
+        //         that.validateForm();
+        //     }
+        // }
     }
 
     validateField(field, element) {

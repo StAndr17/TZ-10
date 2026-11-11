@@ -34,7 +34,7 @@ export class Router {
                 route: '#/signup',
                 title: 'Регистрация',
                 template: './templates/signup.html',
-                styles: '/styles/login.css',
+                styles: '/css/login.css',
                 load: () => {
                     new Signup('signup');
                 }
@@ -43,7 +43,7 @@ export class Router {
                 route: '#/login',
                 title: 'Вход в систему',
                 template: './templates/login.html',
-                styles: '/styles/login.css',
+                styles: '/css/login.css',
                 load: () => {
                     new Login('login');
                 }
@@ -134,11 +134,11 @@ export class Router {
 
     async openRoute() {
         const urlRoute = window.location.hash.split('?')[0];
-        if (urlRoute === '#/login') {
-            await Signup.logout();
-            window.location.href = '#/';
-            return;
-        }
+        // if (urlRoute === '#/login') {
+        //     await Signup.logout();
+        //     window.location.href = '#/';
+        //     return;
+        // }
 
         const newRoute = this.routes.find(item => {
             return item.route === urlRoute;
