@@ -15,16 +15,16 @@ export class Login {
 
         this.fields = [
             {
-                name: 'email',
-                id: 'email',
+                name: 'login-email',
+                id: 'login-email',
                 element: null,
                 regex: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
                 valid: false,
             },
 
             {
-                name: 'password',
-                id: 'password',
+                name: 'login-password',
+                id: 'login-password',
                 element: null,
                 regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
                 valid: false,
