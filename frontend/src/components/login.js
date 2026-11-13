@@ -52,72 +52,86 @@ export class Login {
         // }
     }
 
-    validateField(field, element) {
-        if (!element.value || !element.value.match(field.regex)) {
-            element.parentNode.style.borderColor = 'red';
-            field.valid = false;
-        } else {
-            element.parentNode.removeAttribute('style');
-            field.valid = true;
+    validateField() {
+            const processButton = document.getElementById('process');
+            const loginForm = document.getElementById('login-form');
+            processButton.submit = function(e) {
+                if (!loginForm[0].value) {
+                    alert('Заполните пароль.');
+                    loginForm[0].parentNode.style.borderColor = 'red';
+                    return;
+                }
+                if (!loginForm[1].value) {
+                    loginForm[1].parentNode.style.borderColor = 'red';
+                    alert('Повторите пароль');
+                }
+            }
         }
-        this.validateForm();
+        // if (!element.value || !element.value.match(field.regex)) {
+        //     element.parentNode.style.borderColor = 'red';
+        //     field.valid = false;
+        // } else {
+        //     element.parentNode.removeAttribute('style');
+        //     field.valid = true;
+        // }
+        // this.validateForm();
     }
 
-    validateForm() {
-        const validForm = this.fields.every(item => item.valid);
-        const isValid = this.agreeElement ? this.agreeElement.checked && validForm : validForm;
-        if (isValid) {
-            this.processElement.removeAttribute('disabled');
-        } else {
-            this.processElement.setAttribute('disabled', 'disabled');
-        }
-        return isValid;
-    }
+    // validateForm() {
+    //     const validForm = this.fields.every(item => item.valid);
+    //     const isValid = this.agreeElement ? this.agreeElement.checked && validForm : validForm;
+    //     if (isValid) {
+    //         this.processElement.removeAttribute('disabled');
+    //     } else {
+    //         this.processElement.setAttribute('disabled', 'disabled');
+    //     }
+    //     return isValid;
+    // }
 
     async processForm() {
-        if (this.validateForm()) {
+        if (this.validateField()) {
             const email = this.fields.find(item => item.name === 'email').element.value;
             const password = this.fields.find(item => item.name === 'password').element.value;
 
-            // if (this.page === 'login') {
-            //     try {
-            //         const result = await CustomHttp.request(config.host + '/login', 'POST', {
-            //             email: this.fields.find(item => item.email === 'email').element.value,
-            //             password: this.fields.find(item => item.password === 'password').element.value,
-            //         });
-            //         if (result) {
-            //             if (result.error || !result.user) {
-            //                 throw new Error(result.message);
-            //             }
-            //         }
-            //
-            //     } catch (error) {
-            //         return console.log(error);
-            //     }
-            // }
-            //
-            // try {
-            //     const result = await CustomHttp.request(config.host + '/login', 'POST', {
-            //         email: email,
-            //         password: password,
-            //     });
-            //     if (result) {
-            //         if (result.error || !result.accessToken || !result.refreshToken || !result.fullName
-            //             || !result.userId) {
-            //             throw new Error(result.message);
-            //         }
-            //
-            //         Auth.setTokens(result.accessToken, result.refreshToken);
-            //         Auth.setUserInfo({
-            //             fullName: result.fullName,
-            //             userId: result.userId
-            //         })
-            //         location.href = '#/choice';
-            //     }
-            //
-            // } catch (error) {
-            //     console.log(error);
-            // }
+            if (this.page === 'login') {
+                try {
+                    const result = await CustomHttp.request(config.host + '/login', 'POST', {
+                        email: this.fields.find(item => item.email === 'email').element.value,
+                        password: this.fields.find(item => item.password === 'password').element.value,
+                    });
+                    if (result) {
+                        if (result.error || !result.user) {
+                            throw new Error(result.message);
+                        }
+                    }
+
+                } catch (error) {
+                    return console.log(error);
+                }
+            }
+
+            try {
+                const result = await CustomHttp.request(config.host + '/login', 'POST', {
+                    email: email,
+                    password: password,
+                });
+                if (result) {
+                    if (result.error || !result.accessToken || !result.refreshToken || !result.fullName
+                        || !result.userId) {
+                        throw new Error(result.message);
+                    }
+
+                    Auth.setTokens(result.accessToken, result.refreshToken);
+                    Auth.setUserInfo({
+                        fullName: result.fullName,
+                        userId: result.userId
+                    })
+                    location.href = '#/choice';
+                }
+
+            } catch (error) {
+                console.log(error);
+            }
         }
     }
 }

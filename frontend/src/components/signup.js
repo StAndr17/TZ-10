@@ -88,30 +88,40 @@ export class Signup {
         // }
     }
 
-    validateField(field, element) {
-        if (!element.value || !element.value.match(field.regex)) {
-            element.parentNode.style.borderColor = 'red';
-            field.valid = false;
-        } else {
-            element.parentNode.removeAttribute('style');
-            field.valid = true;
+    validateField() {
+        const processButton = document.getElementById('process');
+        const form = document.getElementById('form');
+        processButton.submit = function(e) {
+            if (!form[0].value) {
+                alert('Заполните имя.');
+                form[0].parentNode.style.borderColor = 'red';
+                return;
+            }
+            if (!form[1].value) {
+                alert('Заполните фамилию.');
+                form[1].parentNode.style.borderColor = 'red';
+                return;
+            }
+            if (!form[2].value) {
+                alert('Заполните email.');
+                form[2].parentNode.style.borderColor = 'red';
+                return;
+            }
+            if (!form[3].value) {
+                alert('Заполните пароль.');
+                form[3].parentNode.style.borderColor = 'red';
+                return;
+            }
+            if (!form[4].value) {
+                alert('Повторите пароль');
+                form[4].parentNode.style.borderColor = 'red';
+            }
         }
-        this.validateForm();
     }
 
-    validateForm() {
-        const validForm = this.fields.every(item => item.valid);
-        const isValid = this.agreeElement ? this.agreeElement.checked && validForm : validForm;
-        if (isValid) {
-            this.processElement.removeAttribute('disabled');
-        } else {
-            this.processElement.setAttribute('disabled', 'disabled');
-        }
-        return isValid;
-    }
 
     async processForm() {
-        if (this.validateForm()) {
+        if (this.validateField()) {
             const name = this.fields.find(item => item.name === 'name').element.value;
             const lastName = this.fields.find(item => item.name === 'lastName').element.value;
             const email = this.fields.find(item => item.name === 'email').element.value;
