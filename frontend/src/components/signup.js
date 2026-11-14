@@ -15,21 +15,21 @@ export class Signup {
             {
                 name: 'name',
                 id: 'name',
-                element: null,
+                // element: null,
                 valid: false,
             },
 
             {
                 name: 'lastName',
                 id: 'lastName',
-                element: null,
+                // element: null,
                 valid: false,
             },
 
             {
                 name: 'email',
                 id: 'email',
-                element: null,
+                // element: null,
                 regex: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
                 valid: false,
             },
@@ -37,14 +37,14 @@ export class Signup {
             {
                 name: 'password',
                 id: 'password',
-                element: null,
+                // element: null,
                 regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
                 valid: false,
             },
             {
                 name: 'repeat-password',
                 id: 'repeat-password',
-                element: null,
+                // element: null,
                 regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
                 valid: false,
             },
@@ -170,4 +170,4 @@ export class Signup {
             // }
         }
     }
-    }
+}

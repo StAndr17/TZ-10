@@ -1,4 +1,6 @@
-import config from "bootstrap/js/src/util/config";
+
+import {CustomHttp} from "../services/custom-http";
+import config from "../../config/config";
 
 export class Login {
 
@@ -7,7 +9,7 @@ export class Login {
         this.processElement = null;
         this.page = page;
 
-        const accessToken = localStorage.getItem(Login.accessTokenKey);
+        const accessToken = localStorage.getItem(CustomHttp.accessTokenKey);
         if (accessToken) {
             // location.href = '#/choice';
             return;
@@ -32,15 +34,16 @@ export class Login {
         ];
 
         const that = this;
-        this.fields.forEach(item => {
-            item.element = document.getElementById(item.id);
-            item.element.onchange = function () {
-                that.validateField.call(that, item, this)
-            }
-        });
+        // this.fields.forEach(item => {
+        //     item.element = document.getElementById(item.id);
+        //     item.element.onchange = function () {
+        //         that.validateField.call(that, item, this)
+        //     }
+        // });
 
         this.processElement = document.getElementById('login-process');
-        this.processElement.onclick = function () {
+        this.processElement.onclick = function (e) {
+            e.preventDefault();
             that.processForm();
         }
 
@@ -53,29 +56,33 @@ export class Login {
     }
 
     validateField() {
-            const processButton = document.getElementById('process');
-            const loginForm = document.getElementById('login-form');
-            processButton.submit = function(e) {
-                if (!loginForm[0].value) {
-                    alert('Заполните пароль.');
-                    loginForm[0].parentNode.style.borderColor = 'red';
-                    return;
-                }
-                if (!loginForm[1].value) {
-                    loginForm[1].parentNode.style.borderColor = 'red';
-                    alert('Повторите пароль');
-                }
+        const processButton = document.getElementById('process');
+        const loginForm = document.getElementById('login-form');
+        let isValid = true;
+        // processButton.submit = function (e) {
+            if (!loginForm[0].value) {
+                console.log('error');
+                loginForm[0].parentNode.style.border = '1px solid red';
+                isValid = false;
             }
-        }
-        // if (!element.value || !element.value.match(field.regex)) {
-        //     element.parentNode.style.borderColor = 'red';
-        //     field.valid = false;
-        // } else {
-        //     element.parentNode.removeAttribute('style');
-        //     field.valid = true;
+            if (!loginForm[1].value) {
+                console.log('error');
+                loginForm[1].parentNode.style.border = '1px solid red';
+                isValid = false;
+            }
+            return isValid;
         // }
-        // this.validateForm();
     }
+
+    // if (!element.value || !element.value.match(field.regex)) {
+    //     element.parentNode.style.borderColor = 'red';
+    //     field.valid = false;
+    // } else {
+    //     element.parentNode.removeAttribute('style');
+    //     field.valid = true;
+    // }
+    // this.validateForm();
+
 
     // validateForm() {
     //     const validForm = this.fields.every(item => item.valid);
@@ -89,6 +96,7 @@ export class Login {
     // }
 
     async processForm() {
+        this.validateField();
         if (this.validateField()) {
             const email = this.fields.find(item => item.name === 'email').element.value;
             const password = this.fields.find(item => item.name === 'password').element.value;
