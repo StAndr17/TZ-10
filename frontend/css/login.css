@@ -30,3 +30,9 @@ body {
 .form-link {
     font-family: Roboto-Regular, sans-serif;
 }
+
+.input-error {
+    font-family: Roboto-Regular, sans-serif;
+    color: red;
+    display: none;
+}

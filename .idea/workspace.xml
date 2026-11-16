@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8c5c063-ad38-4d2b-9772-c765ea04058f" name="Changes" comment="body">
-      <change afterPath="$PROJECT_DIR$/frontend/config/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/services/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/services/custom-http.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/css/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,6 +133,7 @@
       <workItem from="1794579543671" duration="2060000" />
       <workItem from="1794588490903" duration="394000" />
       <workItem from="1794651174730" duration="1184000" />
+      <workItem from="1794848551294" duration="2826000" />
     </task>
     <servers />
   </component>

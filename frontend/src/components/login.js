@@ -60,16 +60,33 @@ export class Login {
         const loginForm = document.getElementById('login-form');
         let isValid = true;
         // processButton.submit = function (e) {
-            if (!loginForm[0].value) {
-                console.log('error');
+        let regExpEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        let regExpPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+            if (!loginForm[0].value.trim()) {
+                document.getElementById('login-email-error').style.display ='block'
+                loginForm[0].parentNode.style.border = '1px solid red';
+                isValid = false;
+            }
+            if (!regExpEmail.test(loginForm[0].value.trim())) {
+                document.getElementById('reg-email-error').style.display ='block'
                 loginForm[0].parentNode.style.border = '1px solid red';
                 isValid = false;
             }
             if (!loginForm[1].value) {
-                console.log('error');
+                document.getElementById('login-email-password').style.display ='block'
                 loginForm[1].parentNode.style.border = '1px solid red';
                 isValid = false;
             }
+        if (!regExpPassword.test(loginForm[1].value)) {
+            document.getElementById('reg-password-error').style.display ='block'
+            loginForm[1].parentNode.style.border = '1px solid red';
+            isValid = false;
+        }
+        if (loginForm[1].value > 8) {
+            document.getElementById('pass-length').style.display ='block'
+            loginForm[1].parentNode.style.border = '1px solid red';
+            isValid = false;
+        }
             return isValid;
         // }
     }
@@ -96,16 +113,15 @@ export class Login {
     // }
 
     async processForm() {
-        this.validateField();
+        // this.validateField();
         if (this.validateField()) {
-            const email = this.fields.find(item => item.name === 'email').element.value;
-            const password = this.fields.find(item => item.name === 'password').element.value;
-
+            const email = this.fields.find(item => item.name === 'login-email').element.value;
+            const password = this.fields.find(item => item.name === 'login-password').element.value;
             if (this.page === 'login') {
                 try {
                     const result = await CustomHttp.request(config.host + '/login', 'POST', {
-                        email: this.fields.find(item => item.email === 'email').element.value,
-                        password: this.fields.find(item => item.password === 'password').element.value,
+                        email: this.fields.find(item => item.email === 'login-email').element.value,
+                        password: this.fields.find(item => item.password === 'login-password').element.value,
                     });
                     if (result) {
                         if (result.error || !result.user) {
