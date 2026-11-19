@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8c5c063-ad38-4d2b-9772-c765ea04058f" name="Changes" comment="body">
-      <change beforePath="$PROJECT_DIR$/frontend/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/css/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/login.html" afterDir="false" />
     </list>
@@ -134,6 +133,9 @@
       <workItem from="1794588490903" duration="394000" />
       <workItem from="1794651174730" duration="1184000" />
       <workItem from="1794848551294" duration="2826000" />
+      <workItem from="1794912129037" duration="1250000" />
+      <workItem from="1794940833621" duration="559000" />
+      <workItem from="1795076616918" duration="2066000" />
     </task>
     <servers />
   </component>

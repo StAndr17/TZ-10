@@ -62,29 +62,34 @@ export class Login {
         // processButton.submit = function (e) {
         let regExpEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         let regExpPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+        let emailError = document.getElementById('login-email-error')
+        emailError.classList.add('input-error');
+        input-error.style.display ='none';
+        input-error.style.border = '1px solid red';
+        emailError.classList.remove('input-error');
             if (!loginForm[0].value.trim()) {
-                document.getElementById('login-email-error').style.display ='block'
-                loginForm[0].parentNode.style.border = '1px solid red';
+                emailError.textContent ='Error email is empty';
+                emailError.classList.add('input-error');
                 isValid = false;
-            }
+            } else
             if (!regExpEmail.test(loginForm[0].value.trim())) {
-                document.getElementById('reg-email-error').style.display ='block'
-                loginForm[0].parentNode.style.border = '1px solid red';
+                emailError.textContent ='Error invalid email';
+                emailError.classList.add('input-error');
                 isValid = false;
-            }
+            } else
             if (!loginForm[1].value) {
-                document.getElementById('login-email-password').style.display ='block'
-                loginForm[1].parentNode.style.border = '1px solid red';
+                emailError.textContent ='Error password is empty';
+                emailError.classList.add('input-error');
                 isValid = false;
-            }
+            } else
         if (!regExpPassword.test(loginForm[1].value)) {
-            document.getElementById('reg-password-error').style.display ='block'
-            loginForm[1].parentNode.style.border = '1px solid red';
+            emailError.textContent ='Error invalid password';
+            emailError.classList.add('input-error');
             isValid = false;
-        }
+        } else
         if (loginForm[1].value > 8) {
-            document.getElementById('pass-length').style.display ='block'
-            loginForm[1].parentNode.style.border = '1px solid red';
+            emailError.textContent ='Password too short';
+            emailError.classList.add('input-error');
             isValid = false;
         }
             return isValid;
