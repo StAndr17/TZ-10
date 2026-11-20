@@ -1,3 +1,6 @@
+import {CustomHttp} from "../services/custom-http.js";
+import {Auth} from "../services/auth.js";
+
 export class Signup {
 
     constructor(page) {
@@ -7,7 +10,6 @@ export class Signup {
 
         const accessToken = localStorage.getItem(Signup.accessTokenKey);
         if (accessToken) {
-            // location.href = '#/choice';
             return;
         }
 
@@ -15,21 +17,21 @@ export class Signup {
             {
                 name: 'name',
                 id: 'name',
-                // element: null,
+                element: null,
                 valid: false,
             },
 
             {
                 name: 'lastName',
                 id: 'lastName',
-                // element: null,
+                element: null,
                 valid: false,
             },
 
             {
                 name: 'email',
                 id: 'email',
-                // element: null,
+                element: null,
                 regex: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
                 valid: false,
             },
@@ -37,35 +39,19 @@ export class Signup {
             {
                 name: 'password',
                 id: 'password',
-                // element: null,
+                element: null,
                 regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
                 valid: false,
             },
             {
                 name: 'repeat-password',
                 id: 'repeat-password',
-                // element: null,
+                element: null,
                 regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
                 valid: false,
             },
         ];
 
-        // if (this.page === 'signup') {
-        //     this.fields.unshift({
-        //             name: 'name',
-        //             id: 'name',
-        //             element: null,
-        //             regex: /^[А-Я][а-я]+\s*$/,
-        //             valid: false,
-        //         },
-        //         {
-        //             name: 'lastName',
-        //             id: 'lastName',
-        //             element: null,
-        //             regex: /^[А-Я][а-я]+\s*$/,
-        //             valid: false,
-        //         });
-        // }
 
         const that = this;
         this.fields.forEach(item => {
@@ -80,94 +66,140 @@ export class Signup {
             that.processForm();
         }
 
-        // if (this.page === 'signup') {
-        //     this.agreeElement = document.getElementById('agree');
-        //     this.agreeElement.onchange = function () {
-        //         that.validateForm();
-        //     }
-        // }
     }
 
     validateField() {
         const processButton = document.getElementById('process');
         const form = document.getElementById('form');
-        processButton.submit = function(e) {
+        let isValid = true;
+        let regExpEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        let regExpPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+        let regExpRepPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+
+        let nameError = document.getElementById('signup-name-error')
+        let lastNameError = document.getElementById('signup-lastname-error')
+        let emailError = document.getElementById('signup-email-error')
+        let passwordError = document.getElementById('signup-password-error')
+        let repeatPasswordError = document.getElementById('signup-repeat-password-error')
+
+        nameError.classList.remove('input-error-text');
+        lastNameError.classList.remove('input-error-text');
+        emailError.classList.remove('input-error-text');
+        passwordError.classList.remove('input-error-text');
+        repeatPasswordError.classList.remove('input-error-text');
+        emailError.textContent = ''
+        passwordError.textContent = ''
+        form[0].parentElement.classList.remove('input-group-error');
+        form[1].parentElement.classList.remove('input-group-error');
+        form[2].parentElement.classList.remove('input-group-error');
+        form[3].parentElement.classList.remove('input-group-error');
+        form[4].parentElement.classList.remove('input-group-error');
+
+        processButton.submit = function (e) {
             if (!form[0].value) {
-                alert('Заполните имя.');
-                form[0].parentNode.style.borderColor = 'red';
-                return;
+                nameError.textContent = 'Error name is empty';
+                nameError.classList.add('input-error-text');
+                form[0].parentElement.classList.add('input-group-error');
+                isValid = false;
             }
+
             if (!form[1].value) {
-                alert('Заполните фамилию.');
-                form[1].parentNode.style.borderColor = 'red';
-                return;
+                lastNameError.textContent = 'Error lastName is empty';
+                lastNameError.classList.add('input-error-text');
+                form[1].parentElement.classList.add('input-group-error');
+                isValid = false;
             }
+
             if (!form[2].value) {
-                alert('Заполните email.');
-                form[2].parentNode.style.borderColor = 'red';
-                return;
+                emailError.textContent = 'Error email is empty';
+                emailError.classList.add('input-error-text');
+                form[2].parentElement.classList.add('input-group-error');
+                isValid = false;
+            } else if (!regExpEmail.test(form[0].value.trim())) {
+                emailError.textContent = 'Error invalid email';
+                emailError.classList.add('input-error-text');
+                form[2].parentElement.classList.add('input-group-error');
+                isValid = false;
             }
+
             if (!form[3].value) {
-                alert('Заполните пароль.');
-                form[3].parentNode.style.borderColor = 'red';
-                return;
+                passwordError.textContent = 'Error password is empty';
+                passwordError.classList.add('input-error-text');
+                form[3].parentElement.classList.add('input-group-error');
+                isValid = false;
+            } else if (!regExpPassword.test(form[3].value.trim())) {
+                passwordError.textContent = 'Error invalid password';
+                passwordError.classList.add('input-error-text');
+                form[3].parentElement.classList.add('input-group-error');
+                isValid = false;
+            } else if (form[3].value > 8) {
+                passwordError.textContent = 'Password too short';
+                passwordError.classList.add('input-error-text');
+                form[3].parentElement.classList.add('input-group-error');
+                isValid = false;
             }
+
             if (!form[4].value) {
-                alert('Повторите пароль');
-                form[4].parentNode.style.borderColor = 'red';
+                repeatPasswordError.textContent = 'Error password is empty';
+                repeatPasswordError.classList.add('input-error-text');
+                form[4].parentElement.classList.add('input-group-error');
+                isValid = false;
+            } else if (!regExpPassword.test(form[4].value.trim())) {
+                repeatPasswordError.textContent = 'Error invalid password';
+                repeatPasswordError.classList.add('input-error-text');
+                form[4].parentElement.classList.add('input-group-error');
+                isValid = false;
+            } else if (form[4].value > 8) {
+                repeatPasswordError.textContent = 'Password too short';
+                repeatPasswordError.classList.add('input-error-text');
+                form[4].parentElement.classList.add('input-group-error');
+                isValid = false;
+            } else if (form[4].value === form[3].value) {
+                repeatPasswordError.textContent = 'Passwords are not matched';
+                repeatPasswordError.classList.add('input-error-text');
+                form[4].parentElement.classList.add('input-group-error');
+                isValid = false;
             }
         }
     }
 
 
     async processForm() {
-        if (this.validateField()) {
-            const name = this.fields.find(item => item.name === 'name').element.value;
-            const lastName = this.fields.find(item => item.name === 'lastName').element.value;
-            const email = this.fields.find(item => item.name === 'email').element.value;
-            const password = this.fields.find(item => item.name === 'password').element.value;
+        const form = document.getElementById('login-form');
 
-            if (this.page === 'signup') {
-                try {
-                    const result = await Signup.request(config.host + '/signup', 'POST', {
-                        name: this.fields.find(item => item.name === 'name').element.value,
-                        lastName: this.fields.find(item => item.name === 'lastName').element.value,
-                        email: this.fields.find(item => item.name === 'email').element.value,
-                        password: this.fields.find(item => item.name === 'password').element.value,
-                    });
-                    if (result) {
-                        if (result.error || !result.user) {
-                            throw new Error(result.message);
-                        }
-                    }
-                } catch (error) {
-                    return console.log(error);
+        if (this.validateField()) {
+            const name = form[0].value;
+            const lastName = form[1].value;
+            const email = form[2].value;
+            const password = form[3].value;
+            const repeat = form[4].value;
+        }
+        try {
+            const result = await CustomHttp.request(config.host + '/login', 'POST', {
+                name: name,
+                lastName: lastName,
+                email: email,
+                password: password,
+                repeat: repeat,
+            });
+            if (result) {
+                if (result.error || !result.accessToken || !result.refreshToken || !result.fullName
+                    || !result.userId) {
+                    throw new Error(result.message);
                 }
+
+                Auth.setTokens(result.accessToken, result.refreshToken);
+                Auth.setUserInfo({
+                    fullName: result.fullName,
+                    userId: result.userId
+                })
+                location.href = '#/choice';
             }
 
-            //     try {
-            //         const result = await CustomHttp.request(config.host + '/login', 'POST', {
-            //             email: email,
-            //             password: password,
-            //         });
-            //         if (result) {
-            //             if (result.error || !result.accessToken || !result.refreshToken || !result.fullName
-            //                 || !result.userId) {
-            //                 throw new Error(result.message);
-            //             }
-            //
-            //             Auth.setTokens(result.accessToken, result.refreshToken);
-            //             Auth.setUserInfo({
-            //                 fullName: result.fullName,
-            //                 userId: result.userId
-            //             })
-            //             location.href = '#/choice';
-            //         }
-            //
-            //     } catch (error) {
-            //         console.log(error);
-            //     }
-            // }
+        } catch (error) {
+            console.log(error);
         }
     }
+
+
 }

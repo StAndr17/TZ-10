@@ -1,4 +1,3 @@
-
 import {CustomHttp} from "../services/custom-http";
 import config from "../../config/config";
 
@@ -11,7 +10,6 @@ export class Login {
 
         const accessToken = localStorage.getItem(CustomHttp.accessTokenKey);
         if (accessToken) {
-            // location.href = '#/choice';
             return;
         }
 
@@ -34,12 +32,7 @@ export class Login {
         ];
 
         const that = this;
-        // this.fields.forEach(item => {
-        //     item.element = document.getElementById(item.id);
-        //     item.element.onchange = function () {
-        //         that.validateField.call(that, item, this)
-        //     }
-        // });
+
 
         this.processElement = document.getElementById('login-process');
         this.processElement.onclick = function (e) {
@@ -47,120 +40,87 @@ export class Login {
             that.processForm();
         }
 
-        // if (this.page === 'signup') {
-        //     this.agreeElement = document.getElementById('agree');
-        //     this.agreeElement.onchange = function () {
-        //         that.validateForm();
-        //     }
-        // }
     }
 
     validateField() {
         const processButton = document.getElementById('process');
         const loginForm = document.getElementById('login-form');
         let isValid = true;
-        // processButton.submit = function (e) {
         let regExpEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         let regExpPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
         let emailError = document.getElementById('login-email-error')
-        emailError.classList.add('input-error');
-        input-error.style.display ='none';
-        input-error.style.border = '1px solid red';
-        emailError.classList.remove('input-error');
-            if (!loginForm[0].value.trim()) {
-                emailError.textContent ='Error email is empty';
-                emailError.classList.add('input-error');
-                isValid = false;
-            } else
-            if (!regExpEmail.test(loginForm[0].value.trim())) {
-                emailError.textContent ='Error invalid email';
-                emailError.classList.add('input-error');
-                isValid = false;
-            } else
-            if (!loginForm[1].value) {
-                emailError.textContent ='Error password is empty';
-                emailError.classList.add('input-error');
-                isValid = false;
-            } else
-        if (!regExpPassword.test(loginForm[1].value)) {
-            emailError.textContent ='Error invalid password';
-            emailError.classList.add('input-error');
+        let passwordError = document.getElementById('login-password-error')
+
+        emailError.classList.remove('input-error-text');
+        passwordError.classList.remove('input-error-text');
+        emailError.textContent = ''
+        passwordError.textContent = ''
+        loginForm[0].parentElement.classList.remove('input-group-error');
+        loginForm[1].parentElement.classList.remove('input-group-error');
+
+        if (!loginForm[0].value.trim()) {
+            emailError.textContent = 'Error email is empty';
+            emailError.classList.add('input-error-text');
+            loginForm[0].parentElement.classList.add('input-group-error');
             isValid = false;
-        } else
-        if (loginForm[1].value > 8) {
-            emailError.textContent ='Password too short';
-            emailError.classList.add('input-error');
+        } else if (!regExpEmail.test(loginForm[0].value.trim())) {
+            emailError.textContent = 'Error invalid email';
+            emailError.classList.add('input-error-text');
+            loginForm[0].parentElement.classList.add('input-group-error');
             isValid = false;
         }
-            return isValid;
-        // }
+
+        if (!loginForm[1].value) {
+            passwordError.textContent = 'Error password is empty';
+            passwordError.classList.add('input-error-text');
+            loginForm[1].parentElement.classList.add('input-group-error');
+            isValid = false;
+        } else if (!regExpPassword.test(loginForm[1].value)) {
+            passwordError.textContent = 'Error invalid password';
+            passwordError.classList.add('input-error-text');
+            loginForm[1].parentElement.classList.add('input-group-error');
+            isValid = false;
+        } else if (loginForm[1].value > 8) {
+            passwordError.textContent = 'Password too short';
+            passwordError.classList.add('input-error-text');
+            loginForm[1].parentElement.classList.add('input-group-error');
+            isValid = false;
+        }
+        return isValid;
     }
 
-    // if (!element.value || !element.value.match(field.regex)) {
-    //     element.parentNode.style.borderColor = 'red';
-    //     field.valid = false;
-    // } else {
-    //     element.parentNode.removeAttribute('style');
-    //     field.valid = true;
-    // }
-    // this.validateForm();
-
-
-    // validateForm() {
-    //     const validForm = this.fields.every(item => item.valid);
-    //     const isValid = this.agreeElement ? this.agreeElement.checked && validForm : validForm;
-    //     if (isValid) {
-    //         this.processElement.removeAttribute('disabled');
-    //     } else {
-    //         this.processElement.setAttribute('disabled', 'disabled');
-    //     }
-    //     return isValid;
-    // }
 
     async processForm() {
-        // this.validateField();
+        const loginForm = document.getElementById('login-form');
+
         if (this.validateField()) {
-            const email = this.fields.find(item => item.name === 'login-email').element.value;
-            const password = this.fields.find(item => item.name === 'login-password').element.value;
-            if (this.page === 'login') {
-                try {
-                    const result = await CustomHttp.request(config.host + '/login', 'POST', {
-                        email: this.fields.find(item => item.email === 'login-email').element.value,
-                        password: this.fields.find(item => item.password === 'login-password').element.value,
-                    });
-                    if (result) {
-                        if (result.error || !result.user) {
-                            throw new Error(result.message);
-                        }
-                    }
+            const email = loginForm[0].value;
+            const password = loginForm[1].value;
 
-                } catch (error) {
-                    return console.log(error);
-                }
-            }
+        }
 
-            try {
-                const result = await CustomHttp.request(config.host + '/login', 'POST', {
-                    email: email,
-                    password: password,
-                });
-                if (result) {
-                    if (result.error || !result.accessToken || !result.refreshToken || !result.fullName
-                        || !result.userId) {
-                        throw new Error(result.message);
-                    }
-
-                    Auth.setTokens(result.accessToken, result.refreshToken);
-                    Auth.setUserInfo({
-                        fullName: result.fullName,
-                        userId: result.userId
-                    })
-                    location.href = '#/choice';
+        try {
+            const result = await CustomHttp.request(config.host + '/login', 'POST', {
+                email: email,
+                password: password,
+            });
+            if (result) {
+                if (result.error || !result.accessToken || !result.refreshToken || !result.fullName
+                    || !result.userId) {
+                    throw new Error(result.message);
                 }
 
-            } catch (error) {
-                console.log(error);
+                Auth.setTokens(result.accessToken, result.refreshToken);
+                Auth.setUserInfo({
+                    fullName: result.fullName,
+                    userId: result.userId
+                })
+                location.href = '#/choice';
             }
+
+        } catch (error) {
+            console.log(error);
         }
     }
+
 }

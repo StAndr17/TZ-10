@@ -31,8 +31,11 @@ body {
     font-family: Roboto-Regular, sans-serif;
 }
 
-.input-error {
+.input-error-text {
     font-family: Roboto-Regular, sans-serif;
     color: red;
-    display: none;
+}
+
+.input-group-error {
+border: 1px solid red;
 }
