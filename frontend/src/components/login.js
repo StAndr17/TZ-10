@@ -37,7 +37,7 @@ export class Login {
         this.processElement = document.getElementById('login-process');
         this.processElement.onclick = function (e) {
             e.preventDefault();
-            that.processForm();
+            // that.processForm();
         }
 
     }
@@ -92,35 +92,36 @@ export class Login {
 
     async processForm() {
         const loginForm = document.getElementById('login-form');
+        const email = loginForm[0].value;
+        const password = loginForm[1].value;
+
 
         if (this.validateField()) {
-            const email = loginForm[0].value;
-            const password = loginForm[1].value;
+            try {
+                const result = await CustomHttp.request(config.host + '/login', 'POST', {
+                    email: email,
+                    password: password,
+                });
+                if (result) {
+                    if (result.error || !result.accessToken || !result.refreshToken || !result.fullName
+                        || !result.userId) {
+                        throw new Error(result.message);
+                    }
 
-        }
-
-        try {
-            const result = await CustomHttp.request(config.host + '/login', 'POST', {
-                email: email,
-                password: password,
-            });
-            if (result) {
-                if (result.error || !result.accessToken || !result.refreshToken || !result.fullName
-                    || !result.userId) {
-                    throw new Error(result.message);
+                    Auth.setTokens(result.accessToken, result.refreshToken);
+                    Auth.setUserInfo({
+                        fullName: result.fullName,
+                        userId: result.userId
+                    })
+                    location.href = '#/choice';
                 }
 
-                Auth.setTokens(result.accessToken, result.refreshToken);
-                Auth.setUserInfo({
-                    fullName: result.fullName,
-                    userId: result.userId
-                })
-                location.href = '#/choice';
+            } catch (error) {
+                console.log(error);
             }
-
-        } catch (error) {
-            console.log(error);
         }
+
+
     }
 
 }
